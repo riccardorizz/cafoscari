@@ -346,3 +346,9 @@ variabile globale nasce prima del esecuzione emuore dopo l ultima riga di codice
 maloc allora la memoria, la new utilizza un tipo di dato. la malloc è una funzione di libreria a differenza della new. la new puo chiaare il costrutture in maniera automatica la malloc no
 
 delete[] per i vettori per eliminare tutto
+
+
+# Le liste
+14-04
+
+Push back e pop back hanno complessità costante, siccome vengono solamente modificati i puntatori alla memoria. 
