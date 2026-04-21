@@ -352,3 +352,118 @@ delete[] per i vettori per eliminare tutto
 14-04
 
 Push back e pop back hanno complessità costante, siccome vengono solamente modificati i puntatori alla memoria. 
+
+---
+
+21-04
+# Liste double linked
+
+```cpp
+int &List::at(int pos){
+    return at.rec(testa,pos);
+}
+int &List::at_rec(cella* h, int pos){
+    assert(h!=nullptr);
+    if(pos==0)
+        return h->info;
+    else
+        return(h->next,pos-1);
+        
+}
+```
+provare a fare cancellazione posizione lista, tutti elemti pari, a partire dal primo fino a quando incontra il primo zero
+
+Le liste doppiamente concatenate hanno un puntatore head e tail. Metà dello spazio è overhead per i puntatori quindi occupano più spazio siccome ci sono due puntatori.
+
+```cpp
+class listDL{
+    public:
+        listDL();
+        listDL(const ListDL&);
+        void prepend(int n);
+        void append(int n);
+        void print() const;
+        int& at(int pos);
+        const int& at(int pos) const;
+        void remove(int pos);
+    
+    private:
+        struct Cella{
+            int info;
+            cella* next;
+            cella* prev;
+        };
+        cella* testa;
+        cella* coda;
+};
+ListDL:cella(){
+    testa = nullptr;
+    coda = nullptr;
+}
+
+void listDL::prepend(int n){
+    cella* pc = new cella; 
+    pc->info = n;
+    pc->prev = nullptr;
+    pc->next = testa;
+
+    if(testa == nullptr){
+        testa = pc;
+        coda = pc;
+    }
+    else{
+        testa->prev = pc;
+        testa = pc;
+    }
+}
+
+void ListDL::prepend(int n){
+    cell* pc = new cell;
+    pc->info = n;
+    pc->next = nullptr;
+    pc->prev = tail;
+
+    if(tail==nullptr){
+        tail = pc;
+        head = pc;
+    }
+    else{
+        tail->next = pc;
+        tail = pc;
+    }
+}
+
+void ListDL::remove(int pos){
+    cell* pc = head;
+    int i=0;
+    while(i< pos && pc!=nullptr){
+        i++;
+        pc=pc->next;
+    }
+    if(pc!=nullptr){
+        if(pc->prev == null){
+            //se sto cancellando il primo elemento della lista
+            head = pc->next;
+        }
+        else{
+            pc-.prev->next = pc->next;
+        }
+        if(pc->next ==nullptr){
+            tail=pc->prev;
+        }
+        else{
+            pc->next->prev=pc->prev;
+        }
+        delete pc;
+    }
+}
+
+void list::swap(){
+    swap_rec(head);
+}
+
+void List::swap_rec(cell* &l){
+    if(l!=nullptr && l->next!=nullptr){
+        cell* pc = l;§
+    }
+}

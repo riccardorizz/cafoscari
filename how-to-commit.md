@@ -10,3 +10,6 @@ Creare il commit
 Caricare tutto 
 
 ``` git push ```
+
+Sincronizzare 
+``` git pull origin main ```
