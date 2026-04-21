@@ -11,5 +11,8 @@ Caricare tutto
 
 ``` git push ```
 
-Sincronizzare 
+Sincronizzare se sono indietro con le versioni
 ``` git pull origin main ```
+
+Scaricare tutto
+``` git clone https://github.com/riccardorizz/cafoscari ```
