@@ -17,8 +17,6 @@ int countSubsets(const vector<int>&v, int index, int target){
     else{
         countSubsets(v,index+1,target-v.at(index)) + countSubsets(v,index+1,target);
     }
-}
-
-int main(){
+}int main(){
 
 }
