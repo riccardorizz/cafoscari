@@ -467,3 +467,36 @@ void List::swap_rec(cell* &l){
         cell* pc = l;§
     }
 }
+```
+28-04
+
+# Stack (Pila)
+
+Lo **Stack** (o Pila) è una struttura dati  che segue una logica di gestione dei dati di tipo **LIFO** (*Last In, First Out*). In questa struttura, l'ultimo elemento inserito è sempre il primo a essere rimosso.
+
+---
+
+## Operazioni Principali
+
+| Operazione | Descrizione |
+| :--- | :--- |
+| `push` | Inserisce un nuovo elemento in cima allo stack. |
+| `pop` | Rimuove l'elemento che si trova in cima allo stack. |
+| `top` | Legge (restituisce) l'elemento in cima senza rimuoverlo. |
+| `isEmpty` | Restituisce `true` se lo stack è vuoto, `false` altrimenti. |
+
+---
+
+## Caratteristiche
+* **LIFO (Last In, First Out):** L'ultimo oggetto aggiunto è il primo a uscire.
+* **Accesso Limitato:** È possibile interagire solo con l'elemento in cima ("top").
+* **Esempio Reale:** Una pila di piatti: aggiungi un piatto in cima e puoi togliere solo l'ultimo che hai appoggiato.
+
+mi creo una classe con sta roba 
+```cpp
+class Stack{
+    public:
+        stack();
+        void push(int n);
+}
+```
