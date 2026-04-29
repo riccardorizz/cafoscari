@@ -500,3 +500,7 @@ class Stack{
         void push(int n);
 }
 ```
+
+esercizi 
+1. completare la classe stakc con le liste
+2. data una lista semplice eliminarel ultima seq1uenza contigua di nuymeri pari
