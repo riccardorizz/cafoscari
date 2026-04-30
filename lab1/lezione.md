@@ -502,5 +502,20 @@ class Stack{
 ```
 
 esercizi 
-1. completare la classe stakc con le liste
-2. data una lista semplice eliminarel ultima seq1uenza contigua di nuymeri pari
+1. completare la classe stack con le liste
+2. data una lista semplice eliminare l'ultima sequenza contigua di numeri pari
+
+
+---
+30-04
+
+prossima es liste, inserimento, cancellazione, ricorsione, concatenate, implementazione di metodi nelle liste. 
+
+Ecco l'implementazione dello stack
+
+{ < lab1/stack/stack.cpp }
+{ < ./stack/stack.cpp }
+
+file . hpp
+
+struct Impl; Impl* impl; è una struttura che si puo dichiarare, dice solo che esiste. 
