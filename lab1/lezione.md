@@ -519,3 +519,49 @@ Ecco l'implementazione dello stack
 file . hpp
 
 struct Impl; Impl* impl; è una struttura che si puo dichiarare, dice solo che esiste. 
+
+
+il const si mnettte se non modifoco una lista sulla firma deklla funzione
+
+
+# Code o Queue 
+7-05
+
+## Definizione
+Le **Code** (o *Queue*) sono strutture dati che seguono la logica **FIFO** (*First In, First Out*): il primo elemento inserito è il primo a essere rimosso.
+
+### Operazioni Fondamentali
+* **Enqueue**: Inserisce un elemento alla fine della coda.
+* **Dequeue**: Rimuove l'elemento in testa alla coda.
+
+---
+
+## Definizione della Classe
+
+```cpp
+class Queue {
+    public:
+        // Gestione Memoria
+        Queue();                 // Costruttore di default
+        Queue(const Queue &c);   // Copy constructor
+        ~Queue();                // Distruttore
+        
+        // Interfaccia Pubblica
+        void enqueue(int e);     // Inserimento
+        void dequeue();          // Rimozione
+        int first() const;       // Accesso alla testa
+        bool isEmpty() const;    // Verifica stato
+    
+    private:
+        
+};
+```
+
+## Domande d'esame 
+Q1: Perchè usi il const quando dichiari il costruttre di copia?
+
+Q2: Perchè metto il const sulla firma del first?
+
+
+
+
