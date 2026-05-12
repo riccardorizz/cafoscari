@@ -284,8 +284,8 @@ L'ultimo elemento inserito è il primo a essere rimosso.
 
 ### Queue (Coda) - Logica FIFO (First In, First Out)
 Il primo elemento inserito è il primo a essere rimosso.
-*   `enqueue`: Inserisce in fondo.
-*   `dequeue`: Rimuove dalla testa (primo elemento).
+*   `enqueue`: Inserisce in coda (tempo lineare).
+*   `dequeue`: Rimuove dalla testa (tempo costante).
 *   `first`: Accede all'elemento in testa.
 
 ---
@@ -299,3 +299,98 @@ R: Per garantire che l'oggetto originale non venga modificato accidentalmente du
 **Q2: Perché metti il `const` sulla firma del metodo `first()` o `stampa()`?**
 
 R: Indica che il metodo è di "sola lettura". Garantisce che lo stato interno dell'oggetto rimarrà invariato dopo la chiamata.
+
+quando vengono eseguiti templqate in esecuzione o in compilazione?
+...
+
+---
+
+## 8. Code con i vector (12-05)
+
+```cpp
+#include <iostream>
+#include <vector>
+#include <cassert>
+using namespace std;
+
+
+class Queue{
+    public:
+        Queue();
+        ~Queue();
+        void enqueue(int x);
+        void dequeue();
+        int head() const;
+        bool isEmpty() const;
+
+    private:
+        vector<int> v[100];
+        int next;
+        int last;
+        int elem;
+        //last è l indice dell elemento più vecchio nel vettore
+        //next e l indice della prossima posizione libera del vettore
+        //questa soluzione consente che last e next possono essere uno piu piccolo dell altro indipendentemente cosi posso riempire l array in tutte le sue caselle
+        //se sono entramni ugualki ho la coda vuiota opure piena
+        //quindi o facio inserire un valore in meno nella coda quindi 99 anziche 100 oppure 
+        //faccio l'implementazionec on un contatore per tenere conto dellecelle occupate e evitare questi problemi
+    };
+
+Queue::Queue(){
+    next=0;
+    last=0;
+    elem=0;
+}
+
+Queue::~Queue(){
+
+}
+
+void Queue::enqueue(int x){
+    if(elem<100){
+        v.at(next)=x;
+        next=(next+1)%100; //per riempire tutti gli spazi
+        elem++;
+    }
+    else{
+        //allungo il vettore
+
+    }
+}
+
+void Queue::dequeue(){
+    if(elem>0){
+        last=(last+1)%100;
+        elem--;
+    }
+}
+
+int Queue::head() const{
+    assert(elem>0);
+    return v.at(last);
+}
+
+bool Queue::isEmpty() const{
+    return (elem==0);
+}
+
+```
+---
+
+## Esercizio Ruzzle
+Dato un tabellone e data una stringa, vedi se c'è modo di trovare la parola nel tabellone rispettando le regole del gioco. 
+
+```cpp
+vector<vector<char>> tab;
+//inizializzazione dela matrice 4x4
+tab.resize(4);
+for(int i=0;i<4;i++){
+    tab.at(i).resize(4);
+}
+tab.at(i).at(i)='B'; 
+//la prima indica le righe, la seconda le colonne
+
+```
+creo una tabella di booleani per capire dove sono passato e dove no
+
+ricerc o la lettera inizial dappertuttto  e poi guardo solo a quelle adiacenti
