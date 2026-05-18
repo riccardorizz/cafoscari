@@ -394,3 +394,9 @@ tab.at(i).at(i)='B';
 creo una tabella di booleani per capire dove sono passato e dove no
 
 ricerc o la lettera inizial dappertuttto  e poi guardo solo a quelle adiacenti
+
+
+inserisci codice qui...
+
+
+## Esercizio campo minato
