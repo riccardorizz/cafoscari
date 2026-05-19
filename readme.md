@@ -400,3 +400,7 @@ inserisci codice qui...
 
 
 ## Esercizio campo minato
+
+DOMANDE ESAME: dato un vector metti tuti zero con foreach con iteratore e altro modo. differensza mettere foreach con e comerciale, cosa vuol dire auto e statiamente sui tipi
+
+le espressioni sono dinamicamente, il tipo e staticamente invece
